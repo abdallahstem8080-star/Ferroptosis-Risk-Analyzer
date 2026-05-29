@@ -575,8 +575,7 @@ if expr_df is not None and risk_sc is not None:
 
     # ── Risk Result ───────────────────────────────────────────────────────
     st.markdown('<div class="section-title">🎯 Risk Classification</div>', unsafe_allow_html=True)
-    st.info(f"⚙️ Risk Score محسوب ديناميكياً من بياناتك: **RS = Σ (TPM × coef)** لكل مريض | Cutoff = median = `{median_cut:.4f}`")
-
+    st.info(f"⚙️ Risk Score calculated automatically based on data by **RS = Σ (TPM × coef)** for each patient  | Cutoff = median = `{median_cut:.4f}`")
     if n_total==1:
         rs_val=float(risk_sc.iloc[0])
         group ="High Risk" if rs_val>=median_cut else "Low Risk"
