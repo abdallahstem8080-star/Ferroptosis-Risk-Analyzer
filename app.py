@@ -201,8 +201,17 @@ def fig_to_bytes(fig):
 # ══════════════════════════════════════════════════════════════════════════
 # HEADER & SIDEBAR
 # ══════════════════════════════════════════════════════════════════════════
-def render_header(): b64=img_to_b64("logo.png") itag=f'<img src="data:image/png;base64,{b64}"/>' if b64 else \ '<div style="width:90px;height:62px;background:white;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#1a6b8a;font-weight:800;font-size:11px;text-align:center;padding:4px;">Deraya<br/>Univ.</div>' st.markdown(f""" <div class="top-header">{itag} <div class="top-header-text"> <h1>Ferroptosis Risk Analyzer</h1> <p>Deraya University &nbsp;·&nbsp; Head &amp; Neck Squamous Cell Carcinoma</p> </div> </div>""", unsafe_allow_html=True)
-
+def render_header():
+    b64=img_to_b64("logo.png")
+    itag=f'<img src="data:image/png;base64,{b64}"/>' if b64 else \
+         '<div style="width:90px;height:62px;background:white;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#1a6b8a;font-weight:800;font-size:11px;text-align:center;padding:4px;">Deraya<br/>Univ.</div>'
+    st.markdown(f"""
+    <div class="top-header">{itag}
+      <div class="top-header-text">
+        <h1>Ferroptosis Risk Analyzer</h1>
+        <p>Deraya University &nbsp;·&nbsp; Head &amp; Neck Squamous Cell Carcinoma</p>
+      </div>
+    </div>""", unsafe_allow_html=True)
 def sidebar_info():
     b64=img_to_b64("logo.png")
     itag=f'<img src="data:image/png;base64,{b64}" style="width:115px;border-radius:12px;background:white;padding:6px;"/>' if b64 else ""
