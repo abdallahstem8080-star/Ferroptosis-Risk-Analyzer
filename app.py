@@ -1,7 +1,7 @@
 import streamlit as st
 
 # ── Password Protection ────────────────────────────────────────────────────
-PASSWORD = "deraya2024"
+PASSWORD = "deraya2026"
 
 def check_password():
     if st.session_state.get("authenticated"):
@@ -516,12 +516,12 @@ sidebar_info()
 # ── Upload Section ────────────────────────────────────────────────────────
 st.markdown('<div class="section-title">📂 Upload Expression Data</div>', unsafe_allow_html=True)
 st.markdown("""
-> **المطلوب فقط:** ملف الـ Expression Matrix — الموقع هيحسب كل حاجة تلقائياً بالمعادلة من البحث.
+>  :** Expression Matrix file required
 """)
 expr_file=st.file_uploader(
     "Expression Matrix (TSV/CSV/GZ) — rows=patients, columns=genes (TPM values)",
     type=["csv","tsv","txt","gz"],
-    help="يجب أن يحتوي على: NQO1, FOSL1, SOCS1, KL, PPARG, PRKCB, CDKN2A, MYCN, SLC2A3"
+    help=" NQO1, FOSL1, SOCS1, KL, PPARG, PRKCB, CDKN2A, MYCN, SLC2A3"
 )
 # survival kept but hidden — only used internally if col names match
 surv_file=None
