@@ -254,7 +254,7 @@ def sidebar_info():
 | AUC 5-yr | **69.51%** | |
 """)
     st.sidebar.markdown("---")
-    st.sidebar.markdown('<div style="font-size:.74rem;opacity:.55;text-align:center;line-height:1.7;">🛠 Developed by <b>Abdallah Ashraf</b><br/>Deraya University · 2024<br/>HNSCC Bioinformatics Lab</div>', unsafe_allow_html=True)
+    st.sidebar.markdown('<div style="font-size:.74rem;opacity:.55;text-align:center;line-height:1.7;">🛠 Developed by <b>Abdallah Ashraf</b><br/>Deraya University · 2026<br/>HNSCC Bioinformatics Lab</div>', unsafe_allow_html=True)
 
 # ══════════════════════════════════════════════════════════════════════════
 # PLOT FUNCTIONS
