@@ -202,14 +202,45 @@ def fig_to_bytes(fig):
 # HEADER & SIDEBAR
 # ══════════════════════════════════════════════════════════════════════════
 def render_header():
-    b64=img_to_b64("logo.png")
-    itag=f'<img src="data:image/png;base64,{b64}"/>' if b64 else \
-         '<div style="width:90px;height:62px;background:white;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#1a6b8a;font-weight:800;font-size:11px;text-align:center;padding:4px;">Deraya<br/>Univ.</div>'
+    b64 = img_to_b64("logo.png")
+    itag = f'<img src="data:image/png;base64,{b64}"/>' if b64 else \
+           '<div style="width:90px;height:62px;background:white;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#1a6b8a;font-weight:800;">DU</div>'
+
     st.markdown(f"""
-    <div class="top-header">{itag}
-      <div class="top-header-text">
-        <h1>Ferroptosis Risk Analyzer</h1>
-        <p>Deraya University &nbsp;·&nbsp; Head &amp; Neck Squamous Cell Carcinoma</p>
+    <div style="position:relative;border-radius:0 0 20px 20px;overflow:hidden;
+                margin-bottom:1.8rem;box-shadow:0 8px 32px rgba(26,107,138,.3);
+                min-height:110px;">
+
+      <!-- 🎬 VIDEO BACKGROUND — ضع رابط الفيديو هنا -->
+      <video autoplay muted loop playsinline
+             style="position:absolute;top:0;left:0;width:100%;height:100%;
+                    object-fit:cover;z-index:0;">
+        <source src="https://www.youtube.com/watch?v=XKZhcYetvsc&pp=ygUSZ2VuYXRpY3MgYWkgdmlkZW9z" type="video/mp4">
+      </video>
+
+      <!-- Overlay بنفس ألوان الـ gradient الأصلي -->
+      <div style="position:absolute;top:0;left:0;width:100%;height:100%;
+                  background:linear-gradient(135deg,
+                    rgba(13,43,56,.88) 0%,
+                    rgba(26,107,138,.82) 70%,
+                    rgba(76,175,77,.75) 100%);
+                  z-index:1;"></div>
+
+      <!-- النص واللوجو كما هم بالظبط -->
+      <div style="position:relative;z-index:2;
+                  padding:1.4rem 2rem;
+                  display:flex;align-items:center;gap:1.5rem;">
+        {itag}
+        <div>
+          <h1 style="font-family:'Playfair Display',serif;font-size:1.9rem;
+                     color:#fff;margin:0;letter-spacing:.3px;">
+            Ferroptosis Risk Analyzer
+          </h1>
+          <p style="font-size:.82rem;color:rgba(255,255,255,.8);
+                    margin:.2rem 0 0;letter-spacing:1.8px;text-transform:uppercase;">
+            Deraya University &nbsp;·&nbsp; Head &amp; Neck Squamous Cell Carcinoma
+          </p>
+        </div>
       </div>
     </div>""", unsafe_allow_html=True)
 
@@ -516,7 +547,7 @@ sidebar_info()
 # ── Upload Section ────────────────────────────────────────────────────────
 st.markdown('<div class="section-title">📂 Upload Expression Data</div>', unsafe_allow_html=True)
 st.markdown("""
->  :** Expression Matrix file required
+>  * Expression Matrix file required
 """)
 expr_file=st.file_uploader(
     "Expression Matrix (TSV/CSV/GZ) — rows=patients, columns=genes (TPM values)",
